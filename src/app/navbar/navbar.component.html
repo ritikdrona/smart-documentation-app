@@ -1,0 +1,49 @@
+<nav class="navbar navbar-light bg-danger text-light shadow">
+    <div class="container-fluid">
+        <a class="navbar-brand" data-bs-toggle="offcanvas" data-bs-target="#offcanvasWithBothOptions"
+            aria-controls="offcanvasWithBothOptions">
+            <!-- <i class="fa fa-bars icon" aria-hidden="true"></i> -->
+        </a>
+        <form class="d-flex">
+            <!-- <h5 class="username mt-1">Username</h5> -->
+            <i class="fa fa-power-off icon m-2" aria-hidden="true" (click)='logout()'></i>
+        </form>
+    </div>
+</nav>
+<!-- <div class="offcanvas offcanvas-start" data-bs-scroll="true" tabindex="-1" id="offcanvasWithBothOptions"
+    aria-labelledby="offcanvasWithBothOptionsLabel">
+    <div class="offcanvas-header">
+        <h5 class="offcanvas-title" id="offcanvasWithBothOptionsLabel">Smart Documentation App</h5>
+        <button type="button" class="btn-close text-reset" data-bs-dismiss="offcanvas" aria-label="Close"></button>
+    </div>
+    <div class="offcanvas-body">
+        <div class="row">
+            <div class="">
+                <div class="list-group list-group-flush" id="list-tab" role="tablist">
+                    <a class="list-group-item list-group-item-action active" id="list-home-list" data-bs-toggle="list"
+                        role="tab">Upload</a>
+                    <a class="list-group-item list-group-item-action" id="list-profile-list" data-bs-toggle="list"
+                        role="tab">Approve</a>
+                    <a class="list-group-item list-group-item-action" id="list-messages-list" data-bs-toggle="list"
+                        role="tab">Search</a>
+                </div>
+            </div>
+        </div>
+    </div>
+</div> -->
+
+
+<div id="circularMenu1" class="circular-menu circular-menu-left active">
+
+    <a class="floating-btn" onclick="document.getElementById('circularMenu1').classList.toggle('active');">
+        <i class="fa fa-bars"></i>
+    </a>
+
+    <menu class="items-wrapper">
+        <a class="menu-item fa fa-file" (click)='navigate("upload")' data-bs-toggle="tooltip" data-bs-placement="top" title="Upload File"></a>
+        <a class="menu-item fa fa-search" (click)='navigate("search")' data-bs-toggle="tooltip" data-bs-placement="top" title="Search File"></a>
+        <a class="menu-item fa fa-thumbs-up" (click)='navigate("approve")' data-bs-toggle="tooltip" data-bs-placement="top" title="Approve"></a>
+        <a class="menu-item fa fa-phone" data-bs-toggle="tooltip" data-bs-placement="top" title="Need Support"></a>
+    </menu>
+
+</div>
