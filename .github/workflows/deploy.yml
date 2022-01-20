@@ -25,6 +25,8 @@ jobs:
 
       - run: cp ./index.html ./404.html
 
+      - run: echo "# Deployment Branch" > README.md
+
       - run: |
           git config --global user.name github-actions
           git config --global user.email github-actions@github.com
