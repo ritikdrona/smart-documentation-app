@@ -15,7 +15,7 @@ jobs:
 
       - run: cp ./dist/smart-documentation-app ~
 
-      - run: actions/checkout@v2
+      - uses: actions/checkout@v2
         with:
           ref: gh-pages
 
@@ -28,4 +28,3 @@ jobs:
           git config --global user.email github-actions@github.com
           git add .
           git commit -m "Deplyed against ${{github.sha}}"
-
