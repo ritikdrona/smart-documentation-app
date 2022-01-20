@@ -28,3 +28,4 @@ jobs:
           git config --global user.email github-actions@github.com
           git add .
           git commit -m "[automated] Deplyed against ${{github.sha}}"
+          git push
