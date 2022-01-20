@@ -13,15 +13,15 @@ jobs:
 
       - run: npm ci && npm run build
 
-      - run: cp ./dist/smart-documentation-app ~
+      - run: cp -r ./dist/smart-documentation-app ~
 
       - uses: actions/checkout@v2
         with:
           ref: gh-pages
 
-      - run: rm *
+      - run: rm -rf *
 
-      - run: cp ~/smart-documentation-app .
+      - run: cp -r ~/smart-documentation-app .
 
       - run: |
           git config --global user.name github-actions
