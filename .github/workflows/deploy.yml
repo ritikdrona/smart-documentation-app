@@ -21,7 +21,7 @@ jobs:
 
       - run: rm -rf *
 
-      - run: cp -r ~/smart-documentation-app .
+      - run: cp -r ~/smart-documentation-app/* .
 
       - run: |
           git config --global user.name github-actions
