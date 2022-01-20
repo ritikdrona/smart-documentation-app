@@ -1,0 +1,31 @@
+name: Deploy
+
+on:
+  push:
+    branches:
+      - master
+
+jobs:
+  build_and_deply:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v2
+
+      - run: npm ci && npm run build
+
+      - run: cp ./dist/smart-documentation-app ~
+
+      - run: actions/checkout@v2
+        with:
+          ref: gh-pages
+
+      - run: rm *
+
+      - run: cp ~/smart-documentation-app .
+
+      - run: |
+          git config --global user.name github-actions
+          git config --global user.email github-actions@github.com
+          git add .
+          git commit -m "Deplyed against ${{github.sha}}"
+
