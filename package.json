@@ -5,6 +5,7 @@
     "ng": "ng",
     "start": "ng serve",
     "build": "ng build --aot --output-hashing all --base-href /smart-documentation-app/",
+    "build:prod": "ng build --prod --aot --output-hashing all --base-href /smart-documentation-app/ --deploy-url https://ritikdrona.github.com/smart-documentation-app/",
     "watch": "ng build --watch --configuration development",
     "test": "ng test"
   },

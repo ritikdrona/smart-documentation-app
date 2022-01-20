@@ -11,7 +11,7 @@ jobs:
     steps:
       - uses: actions/checkout@v2
 
-      - run: npm ci && npm run build
+      - run: npm ci && npm run build:prod
 
       - run: cp -r ./dist/smart-documentation-app ~
 
@@ -22,6 +22,8 @@ jobs:
       - run: rm -rf *
 
       - run: cp -r ~/smart-documentation-app/* .
+
+      - run: cp ./index.html ./404.html
 
       - run: |
           git config --global user.name github-actions
