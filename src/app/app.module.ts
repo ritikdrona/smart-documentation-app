@@ -9,6 +9,7 @@ import { NavbarComponent } from './navbar/navbar.component';
 import { UploadComponent } from './upload/upload.component';
 import { ApproveComponent } from './approve/approve.component';
 import { SearchComponent } from './search/search.component';
+import { CameraComponent } from './camera/camera.component';
 
 @NgModule({
   declarations: [
@@ -17,7 +18,8 @@ import { SearchComponent } from './search/search.component';
     NavbarComponent,
     UploadComponent,
     ApproveComponent,
-    SearchComponent
+    SearchComponent,
+    CameraComponent
   ],
   imports: [
     BrowserModule,
