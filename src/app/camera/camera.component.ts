@@ -21,9 +21,10 @@ export class CameraComponent implements OnInit {
   async initialize() {
     this.player = document.getElementById('player') as HTMLVideoElement;
     this.canvas = document.getElementById('canvas') as HTMLCanvasElement;
-    // this.canvas.height = this.player.height / 4;
-    // this.canvas.width = this.player.width / 4;
     this.context = this.canvas.getContext('2d') as CanvasRenderingContext2D;
+
+    this.canvas.height = this.player.height / 2;
+    this.canvas.width = this.player.width / 2;
 
     const constraints = {
       video: true,
@@ -34,8 +35,15 @@ export class CameraComponent implements OnInit {
   }
 
   capture() {
-    if (this.canvas)
-      this.context.drawImage(this.player, 0, 0, this.canvas.height, this.canvas.width);
+    if (this.canvas) {
+      this.context.drawImage(this.player, 0, 0, this.canvas.width, this.canvas.height);
+      // let tracks = this.player.srcObject.getVideoTracks();
+      // tracks.forEach(track => track.stop());
+
+
+      // player.srcObject.getVideoTracks().forEach(track => track.stop());
+
+    }
   }
 
 }
