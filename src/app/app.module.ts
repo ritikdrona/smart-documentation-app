@@ -10,6 +10,9 @@ import { UploadComponent } from './upload/upload.component';
 import { ApproveComponent } from './approve/approve.component';
 import { SearchComponent } from './search/search.component';
 import { CameraComponent } from './camera/camera.component';
+import {FileUploadModule} from 'primeng/fileupload';
+import { HttpClientModule } from '@angular/common/http';
+import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 
 @NgModule({
   declarations: [
@@ -26,6 +29,9 @@ import { CameraComponent } from './camera/camera.component';
     AppRoutingModule,
     FormsModule,
     ReactiveFormsModule,
+    FileUploadModule,
+    HttpClientModule,
+    BrowserAnimationsModule
   ],
   providers: [],
   bootstrap: [AppComponent]

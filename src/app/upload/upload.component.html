@@ -2,13 +2,24 @@
 <div class="container">
     <div class="card m-4">
         <div class="card-body">
-            <div class="input-group">
-                <label class="input-group-text" for="inputGroupFile01">Upload</label>
-                <input type="file" class="form-control" id="inputGroupFile01">
-            </div>
+            <!-- <div class="input-group"> -->
+                <!-- <label class="input-group-text" for="inputGroupFile01">Upload</label>
+                <input type="file" class="form-control" id="inputGroupFile01"> -->
+                <p-fileUpload name="demo[]" url="http://f4c4-171-50-140-115.ngrok.io/api/v1/core/images/" (onUpload)="onUpload($event)" [multiple]="true"
+                    accept="image/*" [maxFileSize]="1000000">
+                    <ng-template pTemplate="content">
+                        <ul *ngIf="uploadedFiles.length">
+                            <li *ngFor="let file of uploadedFiles">{{file.name}} - {{file.size}} bytes</li>
+                        </ul>
+                    </ng-template>
+                </p-fileUpload>
+            <!-- </div> -->
+            <!-- <div>
+                <button (click)="save()">Submit</button>
+            </div> -->
         </div>
     </div>
-    <div class="w-100 p-4">
+    <!-- <div class="w-100 p-4">
       <app-camera></app-camera>
-    </div>
+    </div> -->
 </div>
