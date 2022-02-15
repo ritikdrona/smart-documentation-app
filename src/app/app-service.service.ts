@@ -6,8 +6,8 @@ import { Injectable } from '@angular/core';
 })
 export class AppServiceService {
 
-  constructor(private hppt: HttpClient) { }
+  constructor(private http: HttpClient) { }
   postImages(data: any){
-    return this.hppt.post<any>("http://f4c4-171-50-140-115.ngrok.io/api/v1/core/images/", data)
+    return this.http.post<any>("http://smart-documentation-api.herokuapp.com/api/v1/core/images/", data)
   }
 }

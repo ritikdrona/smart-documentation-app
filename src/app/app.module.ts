@@ -13,6 +13,9 @@ import { CameraComponent } from './camera/camera.component';
 import {FileUploadModule} from 'primeng/fileupload';
 import { HttpClientModule } from '@angular/common/http';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
+import {ButtonModule} from 'primeng/button';
+import {InputTextareaModule} from 'primeng/inputtextarea';
+
 
 @NgModule({
   declarations: [
@@ -31,7 +34,9 @@ import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
     ReactiveFormsModule,
     FileUploadModule,
     HttpClientModule,
-    BrowserAnimationsModule
+    BrowserAnimationsModule,
+    ButtonModule,
+    InputTextareaModule
   ],
   providers: [],
   bootstrap: [AppComponent]

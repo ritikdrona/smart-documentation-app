@@ -3,23 +3,40 @@
     <div class="card m-4">
         <div class="card-body">
             <!-- <div class="input-group"> -->
-                <!-- <label class="input-group-text" for="inputGroupFile01">Upload</label>
+            <!-- <label class="input-group-text" for="inputGroupFile01">Upload</label>
                 <input type="file" class="form-control" id="inputGroupFile01"> -->
-                <p-fileUpload name="demo[]" url="http://f4c4-171-50-140-115.ngrok.io/api/v1/core/images/" (onUpload)="onUpload($event)" [multiple]="true"
-                    accept="image/*" [maxFileSize]="1000000">
-                    <ng-template pTemplate="content">
-                        <ul *ngIf="uploadedFiles.length">
-                            <li *ngFor="let file of uploadedFiles">{{file.name}} - {{file.size}} bytes</li>
-                        </ul>
-                    </ng-template>
-                </p-fileUpload>
+            <p-fileUpload name="demo[]" 
+                [showUploadButton]="false" (onSelect)="onUpload($event)" [multiple]="true" accept="image/*"
+                [maxFileSize]="1000000">
+                <ng-template pTemplate="content">
+                    <ul *ngIf="uploadedFiles.length">
+                        <li *ngFor="let file of uploadedFiles">{{file.name}} - {{file.size}} bytes</li>
+                    </ul>
+                </ng-template>
+            </p-fileUpload>
             <!-- </div> -->
-            <!-- <div>
-                <button (click)="save()">Submit</button>
-            </div> -->
+        </div>
+        <!-- <button type="button" class="btn btn-primary col-lg-2 m-3" (click)="save()">Upload</button> -->
+        <button *ngIf="uploadedFiles.length" class="col-lg-1 m-3" pButton (click)="save()" type="button"
+            label="Upload"></button>
+    </div>
+    <!-- <div> -->
+    <div class="row">
+        <div *ngFor="let items of imagearr; let i = index" class="col-lg-4 mb-3">
+            <div class="card" style="width: 26rem;">
+                <img src="{{items.image}}" class="card-img-top" alt="...">
+                <div class="card-body">
+                    <!-- <h5 class="card-title">Card title</h5> -->
+                    <p class="card-text">
+                        <textarea style="width: 23.5rem;" rows="5" cols="30" name="text" [(ngModel)]="items.text"
+                            pInputTextarea></textarea>
+                    </p>
+                </div>
+            </div>
         </div>
     </div>
-    <!-- <div class="w-100 p-4">
-      <app-camera></app-camera>
-    </div> -->
+    <div *ngIf="imagearr.length" class="d-flex justify-content-end">
+        <button class="col-lg-1 m-3" pButton (click)="saveConverted()" type="button" label="Save"></button>
+    </div>
+    <!-- </div> -->
 </div>
