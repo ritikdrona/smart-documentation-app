@@ -1,9 +1,12 @@
 import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
 import { ApproveComponent } from './approve/approve.component';
+import { HistoryComponent } from './history/history.component';
 import { LoginComponent } from './login/login.component';
+import { RejectedComponent } from './rejected/rejected.component';
 import { SearchComponent } from './search/search.component';
 import { UploadComponent } from './upload/upload.component';
+import { ValidateComponent } from './validate/validate.component';
 
 const routes: Routes = [
   {
@@ -29,6 +32,21 @@ const routes: Routes = [
   {
     path: "approve",
     component: ApproveComponent,
+    
+  },
+  {
+    path: "history",
+    component: HistoryComponent,
+    
+  },
+  {
+    path: "rejected",
+    component: RejectedComponent,
+    
+  },
+  {
+    path: "validate",
+    component: ValidateComponent,
     
   },
 ];

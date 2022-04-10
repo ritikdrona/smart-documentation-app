@@ -2,32 +2,33 @@
     <div class="card shadow">
         <div class="card-body">
             <div class="row">
-                <div class="col-lg-6">
+                <!-- <div class="col-lg-6">
                     <div class="bg-danger text-light">
                         <i class="fa fa-user-circle-o icon" aria-hidden="true"></i>
                     </div>
-                </div>
-                <div class="col-lg-6">
-                    <form class="right">
+                </div> -->
+                <!-- <div class="col-lg-6"> -->
+                    <form >
+                        <i class="fa fa-user-circle-o icon" aria-hidden="true"></i>
                         <h3 class="card-title"> User Login</h3>
                         <div class="form-floating mb-3">
-                            <input type="email" class="form-control" id="floatingInput" placeholder="name@example.com"
+                            <input type="email" class="form-control inputs" id="floatingInput" placeholder="name@example.com"
                                 name="username" #user='ngModel' [(ngModel)]='username' required
                                 [class.is-invalid]='user.touched && user.invalid'>
                             <label for="floatingInput">Email address</label>
                         </div>
                         <div class="form-floating">
-                            <input type="password" class="form-control" id="floatingPassword" placeholder="Password"
+                            <input type="password" class="form-control inputs" id="floatingPassword" placeholder="Password"
                                 name="password" #pass='ngModel' [(ngModel)]='password' required
                                 [class.is-invalid]='pass.touched && pass.invalid'>
                             <label for="floatingPassword">Password</label>
                         </div>
-                        <button type="button" class="btn btn-danger loginBtn shadow" (click)='save()'>Login</button>
+                        <button type="button" class="loginBtn shadow" (click)='save()'>Login</button>
                         <div class="forgot">
                             <span>Forgot Username / Password</span>
                         </div>
                     </form>
-                </div>
+                <!-- </div> -->
             </div>
         </div>
     </div>

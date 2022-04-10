@@ -1,6 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { FormBuilder, FormGroup } from '@angular/forms';
-import { Image } from '../allinterface';
+import { DocumentC, Image } from '../allinterface';
 import { AppServiceService } from '../app-service.service';
 
 @Component({
@@ -11,7 +10,8 @@ import { AppServiceService } from '../app-service.service';
 export class UploadComponent implements OnInit {
   uploadedFiles: any[] = [];
   public formdata = new FormData();
-  public imagearr: any[] = [];
+  public imagearr: Image[] = [];
+  public postImages = new DocumentC()
 
   constructor(private service: AppServiceService) {
   }
@@ -33,6 +33,9 @@ export class UploadComponent implements OnInit {
     })
   }
   saveConverted(){
-
+    this.postImages.images = this.imagearr
+    this.service.saveImages(this.postImages).subscribe(res=>{
+      console.log(res)
+    })
   }
 }

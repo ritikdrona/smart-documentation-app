@@ -15,7 +15,13 @@ import { HttpClientModule } from '@angular/common/http';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import {ButtonModule} from 'primeng/button';
 import {InputTextareaModule} from 'primeng/inputtextarea';
-
+import {MenubarModule} from 'primeng/menubar';
+import {SidebarModule} from 'primeng/sidebar';
+import { HistoryComponent } from './history/history.component';
+import { ValidateComponent } from './validate/validate.component';
+import { RejectedComponent } from './rejected/rejected.component';
+import {TableModule} from 'primeng/table';
+import {InputTextModule} from 'primeng/inputtext';
 
 @NgModule({
   declarations: [
@@ -25,7 +31,10 @@ import {InputTextareaModule} from 'primeng/inputtextarea';
     UploadComponent,
     ApproveComponent,
     SearchComponent,
-    CameraComponent
+    CameraComponent,
+    HistoryComponent,
+    ValidateComponent,
+    RejectedComponent
   ],
   imports: [
     BrowserModule,
@@ -36,7 +45,11 @@ import {InputTextareaModule} from 'primeng/inputtextarea';
     HttpClientModule,
     BrowserAnimationsModule,
     ButtonModule,
-    InputTextareaModule
+    InputTextareaModule,
+    MenubarModule,
+    SidebarModule,
+    TableModule,
+    InputTextModule
   ],
   providers: [],
   bootstrap: [AppComponent]
